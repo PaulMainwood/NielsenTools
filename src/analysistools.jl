@@ -59,6 +59,7 @@ function prepare_sheet(all_data; customer = "SSL", product_nickname = "innocent 
     else
         return original
     end
+
 end
 
 function prepare_matrix(all_data, position; products = ["innocent TH NFC", "innocent Large NFC", "Trop TH NFC", "Copella TH NFC", "PL TH NFC", "innocent TH Smoothie Classic"], customer = "SSL")
@@ -98,10 +99,3 @@ function create_X(data_matrix, position)
     return X
 end
 
-#Create the variable coefficients
-function create_var_coeffs(data_matrix, position)
-    num_prods = size(data_matrix)[1]
-    vars = ones(Float64, num_prods + 2)
-    println(vars)
-    return vars
-end

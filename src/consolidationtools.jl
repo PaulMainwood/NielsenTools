@@ -10,7 +10,9 @@ end
 
 function string_to_float(x)
     #Process strings to floating point numbers
-    if typeof(x) == Float64
+    if typeof(x) == Int64
+        return Float64(x)
+    elseif typeof(x) == Float64
         return x
     elseif ismissing(x)
         return 0.0
@@ -33,19 +35,23 @@ function create_dicts(; sizepath = "lookups/size_lookup.csv", rangepath = "looku
     size_consolidated = CSV.File(sizepath) |> DataFrame
     size_dict = Dict(size_consolidated.Size .=> size_consolidated.SizeLookup);
     os_th_dict = Dict(size_consolidated.Size .=> size_consolidated.OSTH)
-
+    println("Size dicts constructed")
 
     range_brand = CSV.File(rangepath) |> DataFrame
     range_brand_dict = Dict(range_brand.Range .=> range_brand.Brand)
     range_sector_dict = Dict(range_brand.Range .=> range_brand.Sector)
+    println("Range dicts constructed")
 
     
     count_consolidated = CSV.File(countpath) |> DataFrame
     count_dict = Dict(count_consolidated.Count_original .=> count_consolidated.Count_lookup)
+    println("Count dicts constructed")
+
 
     name_consolidated = CSV.File(namepath) |> DataFrame
     name_dict = Dict(name_consolidated.SKU .=> name_consolidated.Nickname)
     lead_dict = Dict(name_consolidated.SKU .=> name_consolidated.Lead)
+    println("Name dicts constructed")
 
     return size_dict, os_th_dict, range_brand_dict, range_sector_dict, count_dict, name_dict, lead_dict
 end

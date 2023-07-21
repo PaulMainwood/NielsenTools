@@ -1,7 +1,6 @@
 module NielsenTools
 
-using CSV, DataFrames, Plots, Dates # Basic data munging tools
-using StateSpaceModels #The SS models package
+using CSV, DataFrames, Dates # Basic data munging tools
 
 include("consolidationtools.jl")
 include("analysistools.jl")

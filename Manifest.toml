@@ -546,12 +546,6 @@ git-tree-sha1 = "d8d8b8a9f4119829410ecd706da4cc8594a1e020"
 uuid = "276daf66-3868-5448-9aa4-cd146d93841b"
 version = "0.10.3"
 
-[[StateSpaceModels]]
-deps = ["Distributions", "LinearAlgebra", "Optim", "Printf", "Statistics"]
-git-tree-sha1 = "d20548272d8acfcbe13eac394c647ec52e46f708"
-uuid = "99342f36-827c-5390-97c9-d7f9ee765c78"
-version = "0.5.0"
-
 [[StaticArrays]]
 deps = ["LinearAlgebra", "Random", "Statistics"]
 git-tree-sha1 = "da4cf579416c81994afd6322365d00916c79b8ae"
